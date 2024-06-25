@@ -28,12 +28,12 @@
         contactForm.reset(); // Reset form after submission
     });
 });
-// Optional: JavaScript for interaction with pet
+// JavaScript for interaction with pet
 const pet = document.getElementById('pet');
 
 // Function to move pet on click
 pet.addEventListener('click', function() {
-    pet.style.animation = 'petMove 2s ease-in-out forwards';
+    pet.style.animation = 'petJump 0.5s ease-in-out forwards';
 });
 
 // Function to reset pet's position after animation ends
