@@ -1,16 +1,38 @@
-/* General Reset and Base Styles */
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+/* Reset and global styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
-    scroll-behavior: smooth;
-    perspective: 1000px; /* Perspective for 3D effect */
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    position: relative; /* Ensure relative positioning for pet animation */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+a {
+    color: royalblue;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #004a9b;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header styles */
 header {
     background: linear-gradient(90deg, #002366, #005bb5);
     color: #fff;
@@ -20,110 +42,83 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: background 0.3s ease;
 }
 
 header h1 {
-    margin: 0;
     font-size: 3em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    margin-bottom: 0.5em;
     animation: fadeInDown 1s;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 20px;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
     font-size: 1.5em;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ffd700;
+    transform: scale(1.1);
 }
 
-main {
+/* Main section styles */
+#home {
+    background-color: #fff;
+    padding: 2em;
     animation: fadeInUp 1s;
-    padding: 20px;
 }
-
-/* Styles for Intro Section */
 
 .intro {
     text-align: center;
-    padding: 100px 20px; /* Increase padding for more space effect */
-    background: url('https://example.com/path-to-background-image.jpg') center/cover no-repeat; /* Replace with your space-themed background image */
-    background-attachment: fixed; /* Fixed background for parallax effect */
-    height: calc(100vh - 100px); /* Adjust based on header height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
+    margin-bottom: 2em;
+    animation: fadeIn 1s;
 }
 
 .intro h2 {
-    font-size: 5em; /* Increase font size for impact */
-    font-weight: bold;
-    margin-bottom: 20px;
-    animation: bounceInDown 1s ease;
+    color: royalblue;
+    font-size: 3em;
+    margin-bottom: 1em;
+    animation: fadeInDown 1.5s;
 }
 
 .intro p {
     font-size: 1.5em;
     line-height: 1.8;
-    max-width: 800px; /* Limit text width for readability */
-    animation: bounceInUp 1s ease;
+    margin-bottom: 2em;
+    animation: fadeIn 2s;
 }
 
-.intro button {
-    padding: 1em 2em;
-    background: #005bb5;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5em;
-    border-radius: 6px;
-    transition: background 0.3s ease, transform 0.3s ease;
-    margin-top: 20px;
-    animation: bounceIn 1s ease;
+#bio, #work, #contact {
+    background-color: #fff;
+    padding: 4em 2em;
+    margin-bottom: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s;
 }
 
-.intro button:hover {
-    background: #004a9b;
-    transform: scale(1.05);
+#bio h2, #work h2, #contact h2 {
+    color: royalblue;
+    font-size: 3em;
+    margin-bottom: 1em;
+    animation: fadeInDown 1.5s;
 }
 
-/* Styles for Bio Section */
-
-.bio p {
+#bio p, #work p, #contact p {
     font-size: 1.5em;
     line-height: 1.8;
-}
-
-/* Styles for Work Section */
-
-.work h2 {
-    font-size: 3em; /* Keep font size for consistency */
-    font-weight: bold;
-    color: #005bb5;
-    margin-bottom: 20px;
-    animation: fadeIn 1s;
+    margin-bottom: 2em;
+    animation: fadeIn 2s;
 }
 
 .companies {
@@ -135,69 +130,53 @@ main {
 
 .company {
     text-align: center;
-    transition: transform 0.3s ease;
+    margin-bottom: 2em;
+    animation: fadeIn 1s;
 }
 
-.company img {
-    max-width: 150px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+.company p {
+    font-size: 1.5em;
 }
 
-.company img:hover {
-    transform: scale(1.1);
-}
-
-/* Styles for Contact Section */
-
-.contact form {
-    display: flex;
-    flex-direction: column;
+/* Contact form styles */
+#contact-form {
+    display: grid;
     gap: 1em;
     animation: fadeIn 2s;
-    max-width: 600px;
-    margin: 0 auto;
 }
 
-.contact form label {
+#contact-form label {
     font-weight: bold;
     font-size: 1.5em;
+    animation: fadeInLeft 1s;
 }
 
-.contact form input,
-.contact form textarea {
+#contact-form input, #contact-form textarea {
     padding: 1em;
-    border: 1px solid #ccc;
-    border-radius: 8px;
     font-size: 1.5em;
-    transition: border-color 0.3s ease;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    animation: fadeInRight 1s;
 }
 
-.contact form input:focus,
-.contact form textarea:focus {
-    border-color: #005bb5;
-    outline: none;
-}
-
-.contact form button {
+#contact-form button {
     padding: 1em 2em;
-    background: #005bb5;
+    font-size: 1.5em;
+    background-color: royalblue;
     color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 1.5em;
-    border-radius: 6px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeInUp 2s;
 }
 
-.contact form button:hover {
-    background: #004a9b;
+#contact-form button:hover {
+    background-color: #004a9b;
     transform: scale(1.05);
 }
 
-/* Styles for Footer */
-
+/* Footer styles */
 footer {
     background: #002366;
     color: #fff;
@@ -206,21 +185,41 @@ footer {
     position: relative;
     width: 100%;
     bottom: 0;
-    font-size: 1.5em;
+    animation: fadeInUp 1s;
 }
 
 footer p {
     margin: 0;
+    font-size: 1.5em;
 }
 
-/* Keyframe animations */
+/* Pet animation */
+#pet {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transform: translateX(100%);
+    animation: petFloat 5s infinite alternate ease-in-out;
+}
 
+@keyframes petFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Animation keyframes */
 @keyframes fadeInDown {
     from {
         opacity: 0;
         transform: translateY(-20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -232,7 +231,6 @@ footer p {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -243,54 +241,30 @@ footer p {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
 }
 
-@keyframes bounceInDown {
-    0%, 60%, 75%, 90%, 100% {
-        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-        transform: translateY(0);
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
     }
-    70% {
-        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-        transform: translateY(-30px);
-    }
-    80% {
-        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-        transform: translateY(-15px);
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
-@keyframes bounceInUp {
-    0%, 60%, 75%, 90%, 100% {
-        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-        transform: translateY(0);
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
     }
-    70% {
-        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-        transform: translateY(30px);
-    }
-    80% {
-        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-        transform: translateY(15px);
-    }
-}
-
-@keyframes bounceIn {
-    0%, 20%, 40%, 60%, 80%, 100% {
-        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-        transform: translateY(0);
-    }
-    50% {
-        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-        transform: translateY(-30px);
-    }
-    70% {
-        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-        transform: translateY(-15px);
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
