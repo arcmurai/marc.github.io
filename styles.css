@@ -186,10 +186,12 @@ footer p {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 100px; /* Adjust size of the pet */
-    height: auto;
-    animation: petMove 5s infinite alternate ease-in-out;
+    width: 50px; /* Adjust size of the pet */
+    height: 50px;
+    background-color: royalblue;
+    border-radius: 50%;
     cursor: pointer;
+    animation: petMove 5s infinite alternate ease-in-out;
     z-index: 1000; /* Ensure pet is above other elements */
 }
 
