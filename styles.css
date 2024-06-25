@@ -113,3 +113,40 @@ footer p {
     margin: 0;
 }
 
+button {
+    padding: 0.7em;
+    background: #ffd700;
+    color: #002366;
+    border: none;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #ffc300;
+}
+
+#joke {
+    margin-top: 1em;
+    font-style: italic;
+}
+
+.companies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+}
+
+.company {
+    text-align: center;
+    width: 150px;
+}
+
+.company img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 0.5em;
+}
+
