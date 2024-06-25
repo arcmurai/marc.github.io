@@ -127,26 +127,26 @@ button:hover {
     background: #ffc300;
 }
 
-#joke {
+#joke, #another-joke {
     margin-top: 1em;
     font-style: italic;
+    display: none;
 }
 
 .companies {
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 2em;
     justify-content: center;
 }
 
 .company {
     text-align: center;
-    width: 150px;
+    width: 200px;
 }
 
 .company img {
-    width: 100px;
+    width: 150px;
     height: auto;
     margin-bottom: 0.5em;
 }
-
