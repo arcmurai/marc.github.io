@@ -22,19 +22,34 @@
         <section class="intro">
             <h2>Boost Your Business with Professional Copywriting</h2>
             <p>Hi, I'm Marc, a freelance copywriter with a knack for creating persuasive content that drives engagement and sales.</p>
+            <button onclick="showJoke()">Click me for a laugh!</button>
+            <p id="joke" style="display:none;">Why don't writers get cold in winter? Because they wear so many drafts!</p>
         </section>
         <section id="bio">
             <h2>Bio</h2>
-            <p>With 2 years of experience in the copywriting industry, I have honed my skills in crafting compelling content that resonates with audiences. I specialize in creating promotional materials, blog posts, and website copy that not only attract but also retain customers.</p>
+            <p>With 2 years of experience in the copywriting industry, I have honed my skills in crafting compelling content that resonates with audiences. I specialize in creating promotional materials, blog posts, and website copy that not only attract but also retain customers. I've successfully completed projects for over 100 clients.</p>
         </section>
         <section id="work">
             <h2>Companies I've Worked With</h2>
-            <ul>
-                <li>Blue Sky Realty</li>
-                <li>GreenLeaf Financial</li>
-                <li>Tech Innovators</li>
-                <li>Urban Eats Cafe</li>
-            </ul>
+            <div class="companies">
+                <div class="company">
+                    <img src="images/blue_sky_realty.png" alt="Blue Sky Realty">
+                    <p>Blue Sky Realty</p>
+                </div>
+                <div class="company">
+                    <img src="images/greenleaf_financial.png" alt="GreenLeaf Financial">
+                    <p>GreenLeaf Financial</p>
+                </div>
+                <div class="company">
+                    <img src="images/tech_innovators.png" alt="Tech Innovators">
+                    <p>Tech Innovators</p>
+                </div>
+                <div class="company">
+                    <img src="images/urban_eats_cafe.png" alt="Urban Eats Cafe">
+                    <p>Urban Eats Cafe</p>
+                </div>
+                <!-- Add more companies as needed -->
+            </div>
         </section>
         <section id="contact">
             <h2>Contact</h2>
@@ -52,6 +67,25 @@
     <footer>
         <p>&copy; 2024 Marc</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        // Add interactive features like smooth scrolling for better user experience
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        function showJoke() {
+            var joke = document.getElementById('joke');
+            if (joke.style.display === 'none') {
+                joke.style.display = 'block';
+            } else {
+                joke.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
