@@ -38,122 +38,116 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
-.intro, .bio, .work, .portfolio, .testimonials, .contact {
+.intro, .bio, .work, .contact {
     padding: 2em;
     background: #fff;
-    margin:: 1em auto;
-max-width: 1000px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-border-radius: 8px;
+    margin: 1em auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.intro {
-text-align: center;
+.intro:hover, .bio:hover, .work:hover, .contact:hover {
+    transform: translateY(-10px);
 }
 
-.intro h2 {
-color: #005bb5;
+h2 {
+    color: #002366;
+    font-size: 2em;
+    border-bottom: 2px solid #002366;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    transition: color 0.3s ease;
 }
 
-.companies {
-display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
+h2:hover {
+    color: #005bb5;
 }
 
-.company {
-text-align: center;
-margin: 1em;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-.company img {
-max-width: 150px;
-border-radius: 50%;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-transition: transform 0.3s ease;
+form label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
 }
 
-.company img
-{
-transform: scale(1.05);
+form input, form textarea {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
 }
 
-.projects {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1em;
+form input:focus, form textarea:focus {
+    border-color: #005bb5;
 }
 
-.project {
-background: #f9f9f9;
-padding: 1em;
-border-radius: 8px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-transition: box-shadow 0.3s ease;
+form button {
+    padding: 0.7em;
+    background: #002366;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.project
-{
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.testimonials {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.testimonial {
-background: #f9f9f9;
-padding: 1em;
-margin: 0.5em 0;
-border-radius: 8px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-max-width: 700px;
-text-align: center;
-}
-
-.contact form {
-display: flex;
-flex-direction: column;
-gap: 1em;
-}
-
-.contact form label {
-font-weight: bold;
-}
-
-.contact form input, .contact form textarea {
-padding: 0.7em;
-border: 1px solid #ccc;
-border-radius: 4px;
-font-size: 1em;
-}
-
-.contact form button {
-padding: 0.7em;
-background: #005bb5;
-color: #fff;
-border: none;
-cursor: pointer;
-transition: background 0.3s ease;
-}
-
-.contact form button
-{
-background: #004a9b;
+form button:hover {
+    background: #005bb5;
 }
 
 footer {
-background: #002366;
-color: #fff;
-text-align: center;
-padding: 1em 0;
-position: absolute;
-width: 100%;
-bottom: 0;
+    text-align: center;
+    padding: 1em 0;
+    background: #002366;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
-margin: 0;
+    margin: 0;
 }
+
+button {
+    padding: 0.7em;
+    background: #ffd700;
+    color: #002366;
+    border: none;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #ffc300;
+}
+
+#joke, #another-joke {
+    margin-top: 1em;
+    font-style: italic;
+    display: none;
+}
+
+.companies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+.company {
+    text-align: center;
+    width: 200px;
+}
+
+.company img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 0.5em;
+}
+
