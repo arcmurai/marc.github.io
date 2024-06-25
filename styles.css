@@ -21,16 +21,8 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     color: royalblue;
+   
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #004a9b;
-}
-
-ul {
-    list-style: none;
 }
 
 /* Header styles */
@@ -43,138 +35,117 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-header h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
+    transition: background 0.3s ease;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
 }
 
 nav ul li {
-    margin: 0 20px;
+    display: inline-block; /* Changed to inline-block for spacing */
+    margin: 0 10px;
 }
 
 nav ul li a {
-    font-size: 1.5em;
+    color: #fff;
     font-weight: bold;
-    text-transform: uppercase;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
+    font-size: 1.2em; /* Increased font size */
+    padding: 10px; /* Increased padding */
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    transform: scale(1.1);
+    color: #ffd700; /* Changed hover color */
 }
 
 /* Main section styles */
-#home {
-    background-color: #fff;
+main {
     padding: 2em;
-    animation: sectionFadeIn 1s forwards;
+    animation: sectionFadeIn 1s forwards; /* Added animation to main sections */
 }
 
 .intro {
     text-align: center;
-    margin-bottom: 2em;
+    animation: textFadeIn 1s forwards;
 }
 
-.intro h2 {
-    color: royalblue;
-    font-size: 3em;
-    margin-bottom: 1em;
+.bio, .work, .contact {
+    margin: 2em 0;
 }
 
-.intro p {
-    font-size: 1.5em;
-    line-height: 1.8;
-    margin-bottom: 2em;
-}
-
-#bio, #work, #contact {
-    background-color: #fff;
-    padding: 4em 2em;
-    margin-bottom: 2em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#bio h2, #work h2, #contact h2 {
-    color: royalblue;
-    font-size: 3em;
-    margin-bottom: 1em;
-}
-
-#bio p, #work p, #contact p {
-    font-size: 1.5em;
-    line-height: 1.8;
-    margin-bottom: 2em;
-}
-
+/* Companies section styles */
 .companies {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
 }
 
 .company {
     text-align: center;
-    margin-bottom: 2em;
+    padding: 1em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
 .company img {
-    width: 150px; /* Adjust size of company images */
-    height: 150px;
-    object-fit: cover; /* Maintain aspect ratio */
+    max-width: 100px;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
-.company img:hover {
-    transform: scale(1.1);
+.company p {
+    margin-top: 0.5em;
 }
 
-.company p {
-    font-size: 1.5em;
+.company:hover {
+    transform: scale(1.05);
 }
 
 /* Contact form styles */
-#contact-form {
+.contact form {
     display: grid;
     gap: 1em;
+    animation: textFadeIn 1s forwards;
 }
 
-#contact-form label {
+.contact form label {
     font-weight: bold;
-    font-size: 1.5em;
 }
 
-#contact-form input, #contact-form textarea {
-    padding: 1em;
-    font-size: 1.5em;
+.contact form input,
+.contact form textarea {
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
 }
 
-#contact-form button {
-    padding: 1em 2em;
-    font-size: 1.5em;
-    background-color: royalblue;
+.contact form input:focus,
+.contact form textarea:focus {
+    border-color: royalblue;
+    outline: none;
+}
+
+.contact form button {
+    padding: 10px 20px;
+    background: royalblue;
     color: #fff;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-#contact-form button:hover {
-    background-color: #004a9b;
+.contact form button:hover {
+    background: #004a9b;
     transform: scale(1.05);
 }
 
@@ -191,7 +162,6 @@ footer {
 
 footer p {
     margin: 0;
-    font-size: 1.5em;
 }
 
 /* Animation keyframes */
@@ -227,6 +197,7 @@ footer p {
     background-color: royalblue;
     border-radius: 50%;
     animation: petMove 5s infinite alternate ease-in-out;
+    cursor: pointer; /* Added cursor pointer for interaction */
 }
 
 @keyframes petMove {
@@ -239,6 +210,16 @@ footer p {
     100% {
         transform: translateY(0) translateX(0);
     }
+}
+
+/* Interaction with pet */
+#pet:hover {
+    transform: scale(1.1);
+}
+
+/* JavaScript for interaction */
+function woof() {
+    alert('Woof!'); // Alert message on pet click
 }
 
 
