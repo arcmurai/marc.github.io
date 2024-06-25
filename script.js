@@ -41,3 +41,10 @@ pet.addEventListener('animationend', function() {
     pet.style.animation = '';
 });
 
+// JavaScript for interactive pet
+document.getElementById('pet').addEventListener('click', woof);
+
+function woof() {
+    alert('Woof!'); // Alert message on pet click
+}
+
