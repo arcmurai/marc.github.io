@@ -20,14 +20,14 @@
     </header>
     <main id="home">
         <section class="intro">
-            <h2>Boost Your Business with Professional Copywriting</h2>
-            <p>Hi, I'm Marc, a freelance copywriter with a knack for creating persuasive content that drives engagement and sales.</p>
+            <h2>Transform Your Business with Expert Copywriting</h2>
+            <p>Welcome! I'm Marc, a seasoned freelance copywriter dedicated to crafting persuasive and impactful content that elevates your business. With a deep understanding of marketing and a passion for words, I help brands connect with their audience in meaningful ways.</p>
             <button onclick="showJoke()">Click me for a laugh!</button>
             <p id="joke" style="display:none;">Why don't writers get cold in winter? Because they wear so many drafts!</p>
         </section>
         <section id="bio">
             <h2>Bio</h2>
-            <p>With 2 years of experience in the copywriting industry, I have honed my skills in crafting compelling content that resonates with audiences. I specialize in creating promotional materials, blog posts, and website copy that not only attract but also retain customers. I've successfully completed projects for over 100 clients.</p>
+            <p>With over 2 years of experience in the copywriting industry, I've developed a talent for creating content that resonates with readers and drives engagement. I specialize in writing promotional materials, blog posts, and website copy that not only attract attention but also convert leads into loyal customers. Having successfully completed projects for over 100 clients, I've had the pleasure of working with diverse industries, enhancing their online presence and helping them achieve their business goals.</p>
         </section>
         <section id="work">
             <h2>Companies I've Worked With</h2>
@@ -85,6 +85,17 @@
             } else {
                 joke.style.display = 'none';
             }
+        }
+
+        function showAnotherJoke() {
+            var jokeContainer = document.getElementById('another-joke');
+            var jokes = [
+                "Why was the math book sad? Because it had too many problems.",
+                "I told my computer I needed a break, and now it won't stop sending me Kit-Kats.",
+                "Why don't scientists trust atoms? Because they make up everything!"
+            ];
+            jokeContainer.textContent = jokes[Math.floor(Math.random() * jokes.length)];
+            jokeContainer.style.display = 'block';
         }
     </script>
 </body>
