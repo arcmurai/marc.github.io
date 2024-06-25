@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marc - Freelance Copywriter</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -14,8 +15,6 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#bio">Bio</a></li>
                 <li><a href="#work">Work</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -24,8 +23,9 @@
         <section class="intro">
             <h2>Transform Your Business with Expert Copywriting</h2>
             <p>Welcome! I'm Marc, a seasoned freelance copywriter dedicated to crafting persuasive and impactful content that elevates your business. With a deep understanding of marketing and a passion for words, I help brands connect with their audience in meaningful ways.</p>
-            <button>Click me for a laugh!</button>
-            <p id="joke" style="display:none;">Why don't writers get cold in winter? Because they wear so many drafts!</p>
+            <button id="joke-button">Click me for a laugh!</button>
+            <p id="joke" style="display:none;"></p>
+            <button id="more-jokes">More Jokes!</button>
         </section>
         <section id="bio">
             <h2>Bio</h2>
@@ -35,54 +35,27 @@
             <h2>Companies I've Worked With</h2>
             <div class="companies">
                 <div class="company">
-                    <img src="images/blue_sky_realty.png" alt="Blue Sky Realty">
+                    <img src="{{ url_for('static', filename='images/blue_sky_realty.png') }}" alt="Blue Sky Realty">
                     <p>Blue Sky Realty</p>
                 </div>
                 <div class="company">
-                    <img src="images/greenleaf_financial.png" alt="GreenLeaf Financial">
+                    <img src="{{ url_for('static', filename='images/greenleaf_financial.png') }}" alt="GreenLeaf Financial">
                     <p>GreenLeaf Financial</p>
                 </div>
                 <div class="company">
-                    <img src="images/tech_innovators.png" alt="Tech Innovators">
+                    <img src="{{ url_for('static', filename='images/tech_innovators.png') }}" alt="Tech Innovators">
                     <p>Tech Innovators</p>
                 </div>
                 <div class="company">
-                    <img src="images/urban_eats_cafe.png" alt="Urban Eats Cafe">
+                    <img src="{{ url_for('static', filename='images/urban_eats_cafe.png') }}" alt="Urban Eats Cafe">
                     <p>Urban Eats Cafe</p>
                 </div>
-                <!-- Add more companies as needed -->
-            </div>
-        </section>
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <div class="projects">
-                <div class="project">
-                    <h3>Project 1</h3>
-                    <p>Description of project 1, detailing the goals, process, and outcomes.</p>
-                </div>
-                <div class="project">
-                    <h3>Project 2</h3>
-                    <p>Description of project 2, detailing the goals, process, and outcomes.</p>
-                </div>
-                <!-- Add more projects as needed -->
-            </div>
-        </section>
-        <section id="testimonials">
-            <h2>Testimonials</h2>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p>"Marc delivered exceptional copy that boosted our sales by 30%!" - Client A</p>
-                </div>
-                <div class="testimonial">
-                    <p>"Highly professional and creative. Our go-to copywriter!" - Client B</p>
-                </div>
-                <!-- Add more testimonials as needed -->
             </div>
         </section>
         <section id="contact">
             <h2>Contact</h2>
             <p>Let's work together! Fill out the form below to get in touch.</p>
-            <form>
+            <form id="contact-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -96,6 +69,18 @@
     <footer>
         <p>&copy; 2024 Marc</p>
     </footer>
-    <script src="script.js"></script>
+    <!-- Progress Bar -->
+    <div id="progress-bar"></div>
+    <!-- Back to Top Button -->
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    <!-- Joke Modal -->
+    <div id="joke-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="random-joke"></p>
+            <button id="new-joke">Another Joke</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
