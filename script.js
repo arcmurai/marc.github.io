@@ -1,34 +1,4 @@
-// Wait for the document to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Joke Modal
-    const jokeButton = document.getElementById('joke-button');
-    const jokeModal = document.getElementById('joke-modal');
-    const closeBtn = document.querySelector('.close');
-    const randomJoke = document.getElementById('random-joke');
-    const newJokeBtn = document.getElementById('new-joke');
-
-    jokeButton.addEventListener('click', function() {
-        jokeModal.style.display = 'block';
-        fetch('https://official-joke-api.appspot.com/random_joke')
-            .then(response => response.json())
-            .then(data => {
-                randomJoke.textContent = `${data.setup} ${data.punchline}`;
-            });
-    });
-
-    closeBtn.addEventListener('click', function() {
-        jokeModal.style.display = 'none';
-    });
-
-    newJokeBtn.addEventListener('click', function() {
-        fetch('https://official-joke-api.appspot.com/random_joke')
-            .then(response => response.json())
-            .then(data => {
-                randomJoke.textContent = `${data.setup} ${data.punchline}`;
-            });
-    });
-
-    // Smooth Scroll to Top Button
+   // Smooth Scroll to Top Button
     const backToTopBtn = document.getElementById('back-to-top');
 
     backToTopBtn.addEventListener('click', function() {
