@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background: #333;
+    background: #002366;
     color: #fff;
     padding: 1em 0;
     text-align: center;
@@ -31,12 +31,16 @@ nav ul li a {
     font-weight: bold;
 }
 
-.intro, .bio, .contact {
+.intro, .bio, .work, .contact {
     padding: 2em;
     background: #fff;
     margin: 1em auto;
     max-width: 800px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #002366;
 }
 
 form {
@@ -57,7 +61,7 @@ form input, form textarea {
 
 form button {
     padding: 0.7em;
-    background: #333;
+    background: #002366;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -66,7 +70,7 @@ form button {
 footer {
     text-align: center;
     padding: 1em 0;
-    background: #333;
+    background: #002366;
     color: #fff;
     position: fixed;
     bottom: 0;
