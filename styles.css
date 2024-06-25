@@ -38,115 +38,122 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
-.intro, .bio, .work, .contact {
+.intro, .bio, .work, .portfolio, .testimonials, .contact {
     padding: 2em;
     background: #fff;
-    margin: 1em auto;
-    max-width: 800px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    margin:: 1em auto;
+max-width: 1000px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
 }
 
-.intro:hover, .bio:hover, .work:hover, .contact:hover {
-    transform: translateY(-10px);
+.intro {
+text-align: center;
 }
 
-h2 {
-    color: #002366;
-    font-size: 2em;
-    border-bottom: 2px solid #002366;
-    padding-bottom: 0.5em;
-    margin-bottom: 1em;
-    transition: color 0.3s ease;
-}
-
-h2:hover {
-    color: #005bb5;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-bottom: 0.5em;
-    font-weight: bold;
-}
-
-form input, form textarea {
-    margin-bottom: 1em;
-    padding: 0.5em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: border-color 0.3s ease;
-}
-
-form input:focus, form textarea:focus {
-    border-color: #005bb5;
-}
-
-form button {
-    padding: 0.7em;
-    background: #002366;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-form button:hover {
-    background: #005bb5;
-}
-
-footer {
-    text-align: center;
-    padding: 1em 0;
-    background: #002366;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 0;
-}
-
-button {
-    padding: 0.7em;
-    background: #ffd700;
-    color: #002366;
-    border: none;
-    cursor: pointer;
-    margin-top: 1em;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #ffc300;
-}
-
-#joke, #another-joke {
-    margin-top: 1em;
-    font-style: italic;
-    display: none;
+.intro h2 {
+color: #005bb5;
 }
 
 .companies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    justify-content: center;
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
 }
 
 .company {
-    text-align: center;
-    width: 200px;
+text-align: center;
+margin: 1em;
 }
 
 .company img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 0.5em;
+max-width: 150px;
+border-radius: 50%;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s ease;
+}
+
+.company img
+{
+transform: scale(1.05);
+}
+
+.projects {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1em;
+}
+
+.project {
+background: #f9f9f9;
+padding: 1em;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+transition: box-shadow 0.3s ease;
+}
+
+.project
+{
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.testimonials {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.testimonial {
+background: #f9f9f9;
+padding: 1em;
+margin: 0.5em 0;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+max-width: 700px;
+text-align: center;
+}
+
+.contact form {
+display: flex;
+flex-direction: column;
+gap: 1em;
+}
+
+.contact form label {
+font-weight: bold;
+}
+
+.contact form input, .contact form textarea {
+padding: 0.7em;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 1em;
+}
+
+.contact form button {
+padding: 0.7em;
+background: #005bb5;
+color: #fff;
+border: none;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.contact form button
+{
+background: #004a9b;
+}
+
+footer {
+background: #002366;
+color: #fff;
+text-align: center;
+padding: 1em 0;
+position: absolute;
+width: 100%;
+bottom: 0;
+}
+
+footer p {
+margin: 0;
 }
