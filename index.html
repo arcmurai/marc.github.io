@@ -14,6 +14,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#bio">Bio</a></li>
                 <li><a href="#work">Work</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -22,7 +24,7 @@
         <section class="intro">
             <h2>Transform Your Business with Expert Copywriting</h2>
             <p>Welcome! I'm Marc, a seasoned freelance copywriter dedicated to crafting persuasive and impactful content that elevates your business. With a deep understanding of marketing and a passion for words, I help brands connect with their audience in meaningful ways.</p>
-            <button onclick="showJoke()">Click me for a laugh!</button>
+            <button>Click me for a laugh!</button>
             <p id="joke" style="display:none;">Why don't writers get cold in winter? Because they wear so many drafts!</p>
         </section>
         <section id="bio">
@@ -51,8 +53,35 @@
                 <!-- Add more companies as needed -->
             </div>
         </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Description of project 1, detailing the goals, process, and outcomes.</p>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Description of project 2, detailing the goals, process, and outcomes.</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Marc delivered exceptional copy that boosted our sales by 30%!" - Client A</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Highly professional and creative. Our go-to copywriter!" - Client B</p>
+                </div>
+                <!-- Add more testimonials as needed -->
+            </div>
+        </section>
         <section id="contact">
             <h2>Contact</h2>
+            <p>Let's work together! Fill out the form below to get in touch.</p>
             <form>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -67,36 +96,6 @@
     <footer>
         <p>&copy; 2024 Marc</p>
     </footer>
-    <script>
-        // Add interactive features like smooth scrolling for better user experience
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        function showJoke() {
-            var joke = document.getElementById('joke');
-            if (joke.style.display === 'none') {
-                joke.style.display = 'block';
-            } else {
-                joke.style.display = 'none';
-            }
-        }
-
-        function showAnotherJoke() {
-            var jokeContainer = document.getElementById('another-joke');
-            var jokes = [
-                "Why was the math book sad? Because it had too many problems.",
-                "I told my computer I needed a break, and now it won't stop sending me Kit-Kats.",
-                "Why don't scientists trust atoms? Because they make up everything!"
-            ];
-            jokeContainer.textContent = jokes[Math.floor(Math.random() * jokes.length)];
-            jokeContainer.style.display = 'block';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
