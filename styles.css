@@ -127,6 +127,19 @@ nav ul li a:hover {
     margin-bottom: 2em;
 }
 
+.company img {
+    width: 150px; /* Adjust size of company images */
+    height: 150px;
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.company img:hover {
+    transform: scale(1.1);
+}
+
 .company p {
     font-size: 1.5em;
 }
@@ -181,37 +194,11 @@ footer p {
     font-size: 1.5em;
 }
 
-/* Pet animation */
-#pet {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px; /* Adjust size of the pet */
-    height: 50px;
-    background-color: royalblue;
-    border-radius: 50%;
-    cursor: pointer;
-    animation: petMove 5s infinite alternate ease-in-out;
-    z-index: 1000; /* Ensure pet is above other elements */
-}
-
-@keyframes petMove {
-    0% {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(20px, -20px);
-    }
-    100% {
-        transform: translate(0, 0);
-    }
-}
-
 /* Animation keyframes */
 @keyframes textFadeIn {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
@@ -229,3 +216,29 @@ footer p {
         transform: translateY(0);
     }
 }
+
+/* Pet animation */
+#pet {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    border-radius: 50%;
+    animation: petMove 5s infinite alternate ease-in-out;
+}
+
+@keyframes petMove {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(20px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+
