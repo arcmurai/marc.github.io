@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marc - Freelance Copywriter</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -24,8 +25,7 @@
             <h2>Transform Your Business with Expert Copywriting</h2>
             <p>Welcome! I'm Marc, a seasoned freelance copywriter dedicated to crafting persuasive and impactful content that elevates your business. With a deep understanding of marketing and a passion for words, I help brands connect with their audience in meaningful ways.</p>
             <button id="joke-button">Click me for a laugh!</button>
-            <p id="joke" style="display:none;"></p>
-            <button id="more-jokes">More Jokes!</button>
+            <p id="joke" style="display:none;">Why don't writers get cold in winter? Because they wear so many drafts!</p>
         </section>
         <section id="bio">
             <h2>Bio</h2>
@@ -35,27 +35,28 @@
             <h2>Companies I've Worked With</h2>
             <div class="companies">
                 <div class="company">
-                    <img src="{{ url_for('static', filename='images/blue_sky_realty.png') }}" alt="Blue Sky Realty">
+                    <img src="images/blue_sky_realty.png" alt="Blue Sky Realty">
                     <p>Blue Sky Realty</p>
                 </div>
                 <div class="company">
-                    <img src="{{ url_for('static', filename='images/greenleaf_financial.png') }}" alt="GreenLeaf Financial">
+                    <img src="images/greenleaf_financial.png" alt="GreenLeaf Financial">
                     <p>GreenLeaf Financial</p>
                 </div>
                 <div class="company">
-                    <img src="{{ url_for('static', filename='images/tech_innovators.png') }}" alt="Tech Innovators">
+                    <img src="images/tech_innovators.png" alt="Tech Innovators">
                     <p>Tech Innovators</p>
                 </div>
                 <div class="company">
-                    <img src="{{ url_for('static', filename='images/urban_eats_cafe.png') }}" alt="Urban Eats Cafe">
+                    <img src="images/urban_eats_cafe.png" alt="Urban Eats Cafe">
                     <p>Urban Eats Cafe</p>
                 </div>
+                <!-- Add more companies as needed -->
             </div>
         </section>
         <section id="contact">
             <h2>Contact</h2>
             <p>Let's work together! Fill out the form below to get in touch.</p>
-            <form id="contact-form">
+            <form>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -69,18 +70,6 @@
     <footer>
         <p>&copy; 2024 Marc</p>
     </footer>
-    <!-- Progress Bar -->
-    <div id="progress-bar"></div>
-    <!-- Back to Top Button -->
-    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
-    <!-- Joke Modal -->
-    <div id="joke-modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p id="random-joke"></p>
-            <button id="new-joke">Another Joke</button>
-        </div>
-    </div>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="script.js"></script>
 </body>
 </html>
