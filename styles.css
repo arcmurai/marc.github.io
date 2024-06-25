@@ -5,10 +5,10 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    transition: background-color 0.3s ease;
+    background-color: #000;
+    color: #fff;
     scroll-behavior: smooth;
+    perspective: 1000px; /* Perspective for 3D effect */
 }
 
 header {
@@ -25,7 +25,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -48,7 +48,7 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.5em;
     transition: color 0.3s ease;
 }
 
@@ -65,19 +65,30 @@ main {
 
 .intro {
     text-align: center;
+    padding: 100px 20px; /* Increase padding for more space effect */
+    background: url('https://example.com/path-to-background-image.jpg') center/cover no-repeat; /* Replace with your space-themed background image */
+    background-attachment: fixed; /* Fixed background for parallax effect */
+    height: calc(100vh - 100px); /* Adjust based on header height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
 }
 
 .intro h2 {
-    color: #005bb5;
-    font-size: 3em; /* Increase font size for impact */
+    font-size: 5em; /* Increase font size for impact */
     font-weight: bold;
     margin-bottom: 20px;
-    animation: fadeIn 1.5s;
+    animation: bounceInDown 1s ease;
 }
 
 .intro p {
-    font-size: 1.2em;
+    font-size: 1.5em;
     line-height: 1.8;
+    max-width: 800px; /* Limit text width for readability */
+    animation: bounceInUp 1s ease;
 }
 
 .intro button {
@@ -86,10 +97,11 @@ main {
     color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.5em;
     border-radius: 6px;
     transition: background 0.3s ease, transform 0.3s ease;
-    margin-top: 20px; /* Increase spacing */
+    margin-top: 20px;
+    animation: bounceIn 1s ease;
 }
 
 .intro button:hover {
@@ -100,17 +112,18 @@ main {
 /* Styles for Bio Section */
 
 .bio p {
-    font-size: 1.2em;
+    font-size: 1.5em;
     line-height: 1.8;
 }
 
 /* Styles for Work Section */
 
 .work h2 {
-    font-size: 3em; /* Increase font size for impact */
+    font-size: 3em; /* Keep font size for consistency */
     font-weight: bold;
     color: #005bb5;
     margin-bottom: 20px;
+    animation: fadeIn 1s;
 }
 
 .companies {
@@ -149,7 +162,7 @@ main {
 
 .contact form label {
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .contact form input,
@@ -157,7 +170,7 @@ main {
     padding: 1em;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 1.2em;
+    font-size: 1.5em;
     transition: border-color 0.3s ease;
 }
 
@@ -173,7 +186,7 @@ main {
     color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.5em;
     border-radius: 6px;
     transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -193,7 +206,7 @@ footer {
     position: relative;
     width: 100%;
     bottom: 0;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 footer p {
@@ -235,3 +248,49 @@ footer p {
         opacity: 1;
     }
 }
+
+@keyframes bounceInDown {
+    0%, 60%, 75%, 90%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translateY(0);
+    }
+    70% {
+        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translateY(-30px);
+    }
+    80% {
+        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes bounceInUp {
+    0%, 60%, 75%, 90%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translateY(0);
+    }
+    70% {
+        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translateY(30px);
+    }
+    80% {
+        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translateY(15px);
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+        transform: translateY(0);
+    }
+    50% {
+        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translateY(-30px);
+    }
+    70% {
+        transition-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+        transform: translateY(-15px);
+    }
+}
+
