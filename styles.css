@@ -14,12 +14,23 @@ header {
     padding: 1em 0;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    animation: fadeInDown 1s;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
+    margin: 0;
 }
 
 nav ul li {
@@ -38,116 +49,226 @@ nav ul li a:hover {
     color: #ffd700;
 }
 
+main {
+    animation: fadeInUp 1s;
+}
+
 .intro, .bio, .work, .contact {
     padding: 2em;
     background: #fff;
     margin: 1em auto;
-    max-width: 800px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     transition: transform 0.3s ease;
 }
 
 .intro:hover, .bio:hover, .work:hover, .contact:hover {
-    transform: translateY(-10px);
+    transform: scale(1.02);
 }
 
-h2 {
-    color: #002366;
-    font-size: 2em;
-    border-bottom: 2px solid #002366;
-    padding-bottom: 0.5em;
-    margin-bottom: 1em;
-    transition: color 0.3s ease;
+.intro {
+    text-align: center;
 }
 
-h2:hover {
+.intro h2 {
     color: #005bb5;
+    animation: fadeIn 1.5s;
 }
 
-form {
+.companies {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.company {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.company img {
+    max-width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.company img:hover {
+    transform: scale(1.1);
+}
+
+.contact form {
     display: flex;
     flex-direction: column;
 }
 
-form label {
-    margin-bottom: 0.5em;
+.contact label {
     font-weight: bold;
+    margin-top: 10px;
 }
 
-form input, form textarea {
-    margin-bottom: 1em;
-    padding: 0.5em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.contact input, .contact textarea {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
     transition: border-color 0.3s ease;
 }
 
-form input:focus, form textarea:focus {
+.contact input:focus, .contact textarea:focus {
     border-color: #005bb5;
 }
 
-form button {
-    padding: 0.7em;
-    background: #002366;
+.contact button {
+    padding: 10px;
+    background: #005bb5;
     color: #fff;
     border: none;
     cursor: pointer;
-    transition: background 0.3s ease;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 4px;
 }
 
-form button:hover {
-    background: #005bb5;
+.contact button:hover {
+    background: #003f7f;
+    transform: scale(1.05);
 }
 
 footer {
     text-align: center;
     padding: 1em 0;
-    background: #002366;
+    background: #005bb5;
     color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
 footer p {
     margin: 0;
 }
 
-button {
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll Progress Bar */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: #005bb5;
+    z-index: 9999;
+    transition: width 0.2s;
+}
+
+/* Sticky Header Resize */
+header.header-small {
+    padding: 0.5em 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header.header-small h1 {
+    font-size: 1.5em;
+}
+
+/* Form Error Styles */
+input.error, textarea.error {
+    border-color: #ff0000;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     padding: 0.7em;
-    background: #ffd700;
-    color: #002366;
+    background: #005bb5;
+    color: #fff;
     border: none;
     cursor: pointer;
-    margin-top: 1em;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #ffc300;
-}
-
-#joke, #another-joke {
-    margin-top: 1em;
-    font-style: italic;
+    border-radius: 50%;
     display: none;
+    z-index: 999;
+    transition: transform 0.3s ease;
 }
 
-.companies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-    justify-content: center;
+#back-to-top:hover {
+    transform: scale(1.1);
 }
 
-.company {
+/* Modal Styles */
+#joke-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.3s;
+}
+
+#joke-modal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
     text-align: center;
-    width: 200px;
+    border-radius: 8px;
 }
 
-.company img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 0.5em;
+#joke-modal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#joke-modal .close:hover,
+#joke-modal .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Button to Show More Jokes */
+#more-jokes {
+    padding: 0.7em;
+    background: #005bb5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 1em;
+}
+
+#more-jokes:hover {
+    background: #004a9b;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
