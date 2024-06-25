@@ -184,21 +184,24 @@ footer p {
 /* Pet animation */
 #pet {
     position: fixed;
-    bottom: -50px;
-    right: -50px;
-    transform: translateX(100%);
+    bottom: 20px;
+    right: 20px;
+    width: 100px; /* Adjust size of the pet */
+    height: auto;
     animation: petMove 5s infinite alternate ease-in-out;
+    cursor: pointer;
+    z-index: 1000; /* Ensure pet is above other elements */
 }
 
 @keyframes petMove {
     0% {
-        transform: translateY(0) translateX(0);
+        transform: translate(0, 0);
     }
     50% {
-        transform: translateY(-20px) translateX(-20px);
+        transform: translate(20px, -20px);
     }
     100% {
-        transform: translateY(0) translateX(0);
+        transform: translate(0, 0);
     }
 }
 
