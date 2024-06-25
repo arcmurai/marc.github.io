@@ -1,17 +1,19 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    transition: background-color 0.3s ease;
 }
 
 header {
-    background: #002366;
+    background: linear-gradient(90deg, #002366, #005bb5);
     color: #fff;
     padding: 1em 0;
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -29,6 +31,11 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
 }
 
 .intro, .bio, .work, .contact {
@@ -37,10 +44,24 @@ nav ul li a {
     margin: 1em auto;
     max-width: 800px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.intro:hover, .bio:hover, .work:hover, .contact:hover {
+    transform: translateY(-10px);
 }
 
 h2 {
     color: #002366;
+    font-size: 2em;
+    border-bottom: 2px solid #002366;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    transition: color 0.3s ease;
+}
+
+h2:hover {
+    color: #005bb5;
 }
 
 form {
@@ -57,6 +78,12 @@ form input, form textarea {
     margin-bottom: 1em;
     padding: 0.5em;
     border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #005bb5;
 }
 
 form button {
@@ -65,6 +92,11 @@ form button {
     color: #fff;
     border: none;
     cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #005bb5;
 }
 
 footer {
@@ -75,5 +107,9 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+footer p {
+    margin: 0;
 }
 
