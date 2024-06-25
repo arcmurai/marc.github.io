@@ -58,4 +58,3 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.reset(); // Reset form after submission
     });
 });
-
