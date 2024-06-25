@@ -16,6 +16,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
+    animation: textFadeIn 1s forwards; /* Added animation to all headers */
 }
 
 a {
@@ -47,7 +48,6 @@ header {
 header h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
-    animation: fadeInDown 1s;
 }
 
 nav ul {
@@ -76,27 +76,24 @@ nav ul li a:hover {
 #home {
     background-color: #fff;
     padding: 2em;
-    animation: fadeInUp 1s;
+    animation: sectionFadeIn 1s forwards;
 }
 
 .intro {
     text-align: center;
     margin-bottom: 2em;
-    animation: fadeIn 1s;
 }
 
 .intro h2 {
     color: royalblue;
     font-size: 3em;
     margin-bottom: 1em;
-    animation: fadeInDown 1.5s;
 }
 
 .intro p {
     font-size: 1.5em;
     line-height: 1.8;
     margin-bottom: 2em;
-    animation: fadeIn 2s;
 }
 
 #bio, #work, #contact {
@@ -104,21 +101,18 @@ nav ul li a:hover {
     padding: 4em 2em;
     margin-bottom: 2em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s;
 }
 
 #bio h2, #work h2, #contact h2 {
     color: royalblue;
     font-size: 3em;
     margin-bottom: 1em;
-    animation: fadeInDown 1.5s;
 }
 
 #bio p, #work p, #contact p {
     font-size: 1.5em;
     line-height: 1.8;
     margin-bottom: 2em;
-    animation: fadeIn 2s;
 }
 
 .companies {
@@ -131,7 +125,6 @@ nav ul li a:hover {
 .company {
     text-align: center;
     margin-bottom: 2em;
-    animation: fadeIn 1s;
 }
 
 .company p {
@@ -142,13 +135,11 @@ nav ul li a:hover {
 #contact-form {
     display: grid;
     gap: 1em;
-    animation: fadeIn 2s;
 }
 
 #contact-form label {
     font-weight: bold;
     font-size: 1.5em;
-    animation: fadeInLeft 1s;
 }
 
 #contact-form input, #contact-form textarea {
@@ -156,7 +147,6 @@ nav ul li a:hover {
     font-size: 1.5em;
     border: 1px solid #ccc;
     border-radius: 5px;
-    animation: fadeInRight 1s;
 }
 
 #contact-form button {
@@ -168,7 +158,6 @@ nav ul li a:hover {
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: fadeInUp 2s;
 }
 
 #contact-form button:hover {
@@ -185,7 +174,6 @@ footer {
     position: relative;
     width: 100%;
     bottom: 0;
-    animation: fadeInUp 1s;
 }
 
 footer p {
@@ -196,29 +184,29 @@ footer p {
 /* Pet animation */
 #pet {
     position: fixed;
-    bottom: 0;
-    right: 0;
+    bottom: -50px;
+    right: -50px;
     transform: translateX(100%);
-    animation: petFloat 5s infinite alternate ease-in-out;
+    animation: petMove 5s infinite alternate ease-in-out;
 }
 
-@keyframes petFloat {
+@keyframes petMove {
     0% {
-        transform: translateY(0);
+        transform: translateY(0) translateX(0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-20px) translateX(-20px);
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(0) translateX(0);
     }
 }
 
 /* Animation keyframes */
-@keyframes fadeInDown {
+@keyframes textFadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
     to {
         opacity: 1;
@@ -226,7 +214,7 @@ footer p {
     }
 }
 
-@keyframes fadeInUp {
+@keyframes sectionFadeIn {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -236,35 +224,3 @@ footer p {
         transform: translateY(0);
     }
 }
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
