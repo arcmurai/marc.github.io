@@ -32,7 +32,10 @@
 
         header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             animation: fadeInDown 1s;
         }
 
@@ -45,13 +48,14 @@
 
         nav ul li {
             display: inline;
-            margin: 0 10px;
+            margin: 0 20px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2em;
             transition: color 0.3s ease;
         }
 
@@ -61,15 +65,16 @@
 
         main {
             animation: fadeInUp 1s;
+            padding: 20px;
         }
 
         .intro, .bio, .work, .contact {
             padding: 2em;
             background: #fff;
-            margin: 1em auto;
+            margin: 2em auto;
             max-width: 1000px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
             transition: transform 0.3s ease;
         }
 
@@ -83,19 +88,102 @@
 
         .intro h2 {
             color: #005bb5;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
             animation: fadeIn 1.5s;
         }
 
         .intro button {
-            padding: 0.7em;
+            padding: 1em 2em;
             background: #005bb5;
             color: #fff;
             border: none;
             cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 6px;
             transition: background 0.3s ease, transform 0.3s ease;
         }
 
         .intro button:hover {
+            background: #004a9b;
+            transform: scale(1.05);
+        }
+
+        .bio p {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .work h2, .contact h2 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #005bb5;
+            margin-bottom: 20px;
+        }
+
+        .companies {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2em;
+        }
+
+        .company {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .company img {
+            max-width: 150px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .company img:hover {
+            transform: scale(1.1);
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            animation: fadeIn 2s;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact form label {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .contact form input, .contact form textarea {
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact form input:focus, .contact form textarea:focus {
+            border-color: #005bb5;
+            outline: none;
+        }
+
+        .contact form button {
+            padding: 1em 2em;
+            background: #005bb5;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact form button:hover {
             background: #004a9b;
             transform: scale(1.05);
         }
@@ -108,6 +196,7 @@
             position: relative;
             width: 100%;
             bottom: 0;
+            font-size: 1.2em;
         }
 
         footer p {
@@ -185,7 +274,7 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" rows="4" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </section>
@@ -208,5 +297,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
