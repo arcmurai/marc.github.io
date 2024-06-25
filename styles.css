@@ -6,6 +6,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     transition: background-color 0.3s ease;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -76,6 +77,20 @@ main {
     animation: fadeIn 1.5s;
 }
 
+.intro button {
+    padding: 0.7em;
+    background: #005bb5;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.intro button:hover {
+    background: #004a9b;
+    transform: scale(1.05);
+}
+
 .companies {
     display: flex;
     justify-content: space-around;
@@ -102,173 +117,84 @@ main {
 .contact form {
     display: flex;
     flex-direction: column;
+    gap: 1em;
+    animation: fadeIn 2s;
 }
 
-.contact label {
+.contact form label {
     font-weight: bold;
-    margin-top: 10px;
 }
 
-.contact input, .contact textarea {
-    padding: 10px;
-    border: 2px solid #ccc;
+.contact form input, .contact form textarea {
+    padding: 0.7em;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    margin-top: 5px;
+    font-size: 1em;
     transition: border-color 0.3s ease;
 }
 
-.contact input:focus, .contact textarea:focus {
+.contact form input:focus, .contact form textarea:focus {
     border-color: #005bb5;
+    outline: none;
 }
 
-.contact button {
-    padding: 10px;
+.contact form button {
+    padding: 0.7em;
     background: #005bb5;
     color: #fff;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
     transition: background 0.3s ease, transform 0.3s ease;
-    border-radius: 4px;
 }
 
-.contact button:hover {
-    background: #003f7f;
+.contact form button:hover {
+    background: #004a9b;
     transform: scale(1.05);
 }
 
 footer {
+    background: #002366;
+    color: #fff;
     text-align: center;
     padding: 1em 0;
-    background: #005bb5;
-    color: #fff;
+    position: relative;
+    width: 100%;
+    bottom: 0;
 }
 
 footer p {
     margin: 0;
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Scroll Progress Bar */
-#progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 5px;
-    background: #005bb5;
-    z-index: 9999;
-    transition: width 0.2s;
-}
-
-/* Sticky Header Resize */
-header.header-small {
-    padding: 0.5em 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-header.header-small h1 {
-    font-size: 1.5em;
-}
-
-/* Form Error Styles */
-input.error, textarea.error {
-    border-color: #ff0000;
-}
-
-/* Back to Top Button */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 0.7em;
-    background: #005bb5;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    border-radius: 50%;
-    display: none;
-    z-index: 999;
-    transition: transform 0.3s ease;
-}
-
-#back-to-top:hover {
-    transform: scale(1.1);
-}
-
-/* Modal Styles */
-#joke-modal {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-    animation: fadeIn 0.3s;
-}
-
-#joke-modal .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-#joke-modal .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-#joke-modal .close:hover,
-#joke-modal .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Button to Show More Jokes */
-#more-jokes {
-    padding: 0.7em;
-    background: #005bb5;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-    margin-top: 1em;
-}
-
-#more-jokes:hover {
-    background: #004a9b;
-    transform: scale(1.05);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 
