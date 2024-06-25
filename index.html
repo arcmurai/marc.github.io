@@ -4,236 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marc - Freelance Copywriter</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            transition: background-color 0.3s ease;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            background: linear-gradient(90deg, #002366, #005bb5);
-            color: #fff;
-            padding: 1em 0;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: background 0.3s ease;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: fadeInDown 1s;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #ffd700;
-        }
-
-        main {
-            animation: fadeInUp 1s;
-            padding: 20px;
-        }
-
-        .intro, .bio, .work, .contact {
-            padding: 2em;
-            background: #fff;
-            margin: 2em auto;
-            max-width: 1000px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .intro:hover, .bio:hover, .work:hover, .contact:hover {
-            transform: scale(1.02);
-        }
-
-        .intro {
-            text-align: center;
-        }
-
-        .intro h2 {
-            color: #005bb5;
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            animation: fadeIn 1.5s;
-        }
-
-        .intro button {
-            padding: 1em 2em;
-            background: #005bb5;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2em;
-            border-radius: 6px;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .intro button:hover {
-            background: #004a9b;
-            transform: scale(1.05);
-        }
-
-        .bio p {
-            font-size: 1.2em;
-            line-height: 1.8;
-        }
-
-        .work h2, .contact h2 {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #005bb5;
-            margin-bottom: 20px;
-        }
-
-        .companies {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2em;
-        }
-
-        .company {
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .company img {
-            max-width: 150px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .company img:hover {
-            transform: scale(1.1);
-        }
-
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            animation: fadeIn 2s;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact form label {
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .contact form input, .contact form textarea {
-            padding: 1em;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1.2em;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact form input:focus, .contact form textarea:focus {
-            border-color: #005bb5;
-            outline: none;
-        }
-
-        .contact form button {
-            padding: 1em 2em;
-            background: #005bb5;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2em;
-            border-radius: 6px;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .contact form button:hover {
-            background: #004a9b;
-            transform: scale(1.05);
-        }
-
-        footer {
-            background: #002366;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-            position: relative;
-            width: 100%;
-            bottom: 0;
-            font-size: 1.2em;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -251,9 +23,6 @@
         <section class="intro">
             <h2>Transform Your Business with Expert Copywriting</h2>
             <p>Welcome! I'm Marc, a seasoned freelance copywriter dedicated to crafting persuasive and impactful content that elevates your business. With a deep understanding of marketing and a passion for words, I help brands connect with their audience in meaningful ways.</p>
-            <button id="joke-button">Click me for a laugh!</button>
-            <p id="joke" style="display:none;"></p>
-            <button id="more-jokes">More Jokes!</button>
         </section>
         <section id="bio">
             <h2>Bio</h2>
@@ -262,7 +31,18 @@
         <section id="work">
             <h2>Companies I've Worked With</h2>
             <div class="companies">
-                <!-- Placeholder for companies, you will add images and company names here -->
+                <div class="company">
+                    <p>Blue Sky Realty</p>
+                </div>
+                <div class="company">
+                    <p>GreenLeaf Financial</p>
+                </div>
+                <div class="company">
+                    <p>Tech Innovators</p>
+                </div>
+                <div class="company">
+                    <p>Urban Eats Cafe</p>
+                </div>
             </div>
         </section>
         <section id="contact">
@@ -274,7 +54,7 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </section>
@@ -282,21 +62,7 @@
     <footer>
         <p>&copy; 2024 Marc</p>
     </footer>
-    <!-- Progress Bar -->
-    <div id="progress-bar"></div>
-    <!-- Back to Top Button -->
-    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
-    <!-- Joke Modal -->
-    <div id="joke-modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p id="random-joke"></p>
-            <button id="new-joke">Another Joke</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
-
-
 
