@@ -3,6 +3,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
@@ -15,6 +17,7 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -25,14 +28,39 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
-main {
-    padding: 1em;
+.intro, .bio, .contact {
+    padding: 2em;
+    background: #fff;
+    margin: 1em auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-section {
-    margin: 1em 0;
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ddd;
+}
+
+form button {
+    padding: 0.7em;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
 footer {
@@ -40,4 +68,8 @@ footer {
     padding: 1em 0;
     background: #333;
     color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
+
