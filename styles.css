@@ -21,7 +21,6 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
     color: royalblue;
-   
     text-decoration: none;
 }
 
@@ -198,6 +197,7 @@ footer p {
     border-radius: 50%;
     animation: petMove 5s infinite alternate ease-in-out;
     cursor: pointer; /* Added cursor pointer for interaction */
+    z-index: 999; /* Ensure pet is above other elements */
 }
 
 @keyframes petMove {
@@ -218,8 +218,7 @@ footer p {
 }
 
 /* JavaScript for interaction */
-function woof() {
+document.getElementById('pet').addEventListener('click', function() {
     alert('Woof!'); // Alert message on pet click
-}
-
+});
 
